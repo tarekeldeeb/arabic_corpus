@@ -1,6 +1,8 @@
 To convert all old Windows-1256 encoded arabic to UTF-8:
 
-``find . -type f -name *.html -exec bash -c "iconv -f Windows-1256 {} > {}.utf8" \;``
+```
+find . -type f -name *.html -exec bash -c "iconv -f Windows-1256 {} > {}.utf8" \;
+```
 
 Do arabic preprocessing: Unify the Alef, remove dialects and long spaces, remove all non-arabic characters.
 ```
