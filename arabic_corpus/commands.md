@@ -10,3 +10,5 @@ sed -i "s/[$(echo -ne '\u0622\u0623\u0625')]/$(echo -ne '\u0627')/g" test.utf8
 sed -i 's/  \+/ /g' test.utf8
 sed -i "s/[^$(echo -ne '\u0621-\u064A ')]//g" test.utf8
 ```
+
+To list files in a folder hierarchy, it's faster to ``find . -type f | xargs cat | sed ..`` that to ``find . -type f -exec cat {} \; | sed ..``
