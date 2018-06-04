@@ -9,6 +9,12 @@ After merging all corpa, the utf8 should be encoded back to Windows-1256. This i
 ```sh
 iconv -f utf8 -t Windows-1256
 ```
+
+To remove all line breaks:
+```sh
+sed ':a;N;$!ba;s/\n/ /g' 
+```
+
 To list files in a folder hierarchy, it's faster to ``find . -type f | xargs cat | sed ..`` that to ``find . -type f -exec cat {} \; | sed ..``
 
 ### Required Pre-processing
