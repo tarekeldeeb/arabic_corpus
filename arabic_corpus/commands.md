@@ -2,7 +2,7 @@
 
 To convert all old Windows-1256 encoded arabic to UTF-8:
 ```sh
-find . -type f -name *.html -exec bash -c "iconv -f Windows-1256 {} > {}.utf8" \;
+find . -type f -name \*.html -exec bash -c "iconv -f Windows-1256 {} > {}.utf8" \;
 ```
 
 After merging all corpa, the utf8 should be encoded back to Windows-1256. This is a requirement to have each character encoded in a single byte. The GloVe implementation does not consider multi-byte character as in utf8.
