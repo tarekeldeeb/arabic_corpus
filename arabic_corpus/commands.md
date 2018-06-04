@@ -12,9 +12,10 @@ iconv -f utf8 -t Windows-1256
 
 Do arabic preprocessing: Unify the Alef, remove short lines and long spaces, remove all non-arabic characters.
 ```sh
-sed "/[^$(echo -ne '\u0621-\u064A ')\r]/d"
-sed "/^.\{,30\}$/d"
+sed "s/[$(echo -ne '\u060C\u061B\.,:')]/ /g"
+sed "s/[^$(echo -ne '\u0621-\u064A ')\r]//g"
 sed "s/  \+/ /g"
+sed "/^.\{,30\}$/d"
 sed "s/[$(echo -ne '\u0622\u0623\u0625')]/$(echo -ne '\u0627')/g"
 ```
 
