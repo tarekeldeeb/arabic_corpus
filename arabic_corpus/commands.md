@@ -21,7 +21,6 @@ To list files in a folder hierarchy, it's faster to ``find . -type f | xargs cat
 
 ## Corpus Specific Parsers
 ### Al Shamela Library
-
 At Shamela Library, to dump MDB files, I rely on https://github.com/brianb/mdbtools available on apt.
 Each MDB file has some books: t*index* and b*index* tables. It's required to list all b** tables and dump them as:
 ```sh
@@ -32,3 +31,10 @@ Each MDB file has some books: t*index* and b*index* tables. It's required to lis
     done
   done
 ```
+
+### Wikipedia
+It's preferred to use a direct parser for the downloaded xml.gz into plain text. This is possible through this [Wiki 
+Parser](https://dizzylogic.com/wiki-parser/). After doing a test run, choose the following options for a complete articles dump in plain text:
+![wiki_parse](https://user-images.githubusercontent.com/90985/40912749-c55b9c26-67f2-11e8-904f-fc309b4c59c2.jpg)
+
+
