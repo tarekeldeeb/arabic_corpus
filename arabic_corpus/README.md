@@ -1,6 +1,6 @@
 The arabic corpus consists of the following files:
- - Arabic Wikipedia Latest Articles Dump [link](https://dumps.wikimedia.org/arwiki/latest/arwiki-latest-pages-articles.xml.bz2) {0.12B}
  - ShamelaLibrary348.7z [link](https://www.quran.tv/ketab/ShamelaLibrary348.7z) {1.15B}
+ - Arabic Wikipedia Latest Articles Dump [link](https://dumps.wikimedia.org/arwiki/latest/arwiki-latest-pages-articles.xml.bz2) {0.11B}
  - AraCorpus.tar.gz [link](http://aracorpus.e3rab.com/argistestsrv.nmsu.edu/AraCorpus.tar.gz)
  - Tashkeela-arabic-diacritized-text-utf8-0.3.zip [link](https://netix.dl.sourceforge.net/project/tashkeela/)
  - UN arabic corpus [link](http://conferences.unite.un.org/UNCorpus/en/DownloadOverview)
