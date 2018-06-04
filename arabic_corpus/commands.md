@@ -9,7 +9,9 @@ After merging all corpa, the utf8 should be encoded back to Windows-1256. This i
 ```sh
 iconv -f utf8 -t Windows-1256
 ```
+To list files in a folder hierarchy, it's faster to ``find . -type f | xargs cat | sed ..`` that to ``find . -type f -exec cat {} \; | sed ..``
 
+### Required Pre-processing
 Do arabic preprocessing: Unify the Alef, remove short lines and long spaces, remove all non-arabic characters.
 ```sh
   sed "s/[$(echo -ne '\u060C\u061B\.,:')]/ /g" \
@@ -18,8 +20,6 @@ Do arabic preprocessing: Unify the Alef, remove short lines and long spaces, rem
 | sed "/^.\{,30\}$/d" \
 | sed "s/[$(echo -ne '\u0622\u0623\u0625')]/$(echo -ne '\u0627')/g"
 ```
-
-To list files in a folder hierarchy, it's faster to ``find . -type f | xargs cat | sed ..`` that to ``find . -type f -exec cat {} \; | sed ..``
 
 ## Corpus Specific Parsers
 ### Al Shamela Library
