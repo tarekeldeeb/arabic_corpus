@@ -1,4 +1,4 @@
-The arabic corpus consists of the following files:
+The arabic corpus {1.8B word} consists of the following resources:
  - ShamelaLibrary348.7z [link](https://www.quran.tv/ketab/ShamelaLibrary348.7z) {1.15B}
  - UN arabic corpus [link](http://conferences.unite.un.org/UNCorpus/en/DownloadOverview) {0.37B}
  - AraCorpus.tar.gz [link](http://aracorpus.e3rab.com/argistestsrv.nmsu.edu/AraCorpus.tar.gz) {0.14B}
@@ -8,4 +8,4 @@ The arabic corpus consists of the following files:
  
 More resources are listed by [Ayman Eddakrouri](https://sites.google.com/a/aucegypt.edu/infoguistics/directory/Corpus-Linguistics/arabic-corpora) 
 
-Extraction, preprocessing and formatting commands are listed in [commands](commands.md). This folder contains the merged output of all the above corpa. No intermediate files are added due to huge file sizes.
+Extraction, preprocessing and formatting commands are listed in [commands](commands.md). Due to file sizes limits in github, no files are added due to huge file sizes.
