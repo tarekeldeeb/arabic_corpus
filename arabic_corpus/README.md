@@ -8,4 +8,6 @@ The arabic corpus {1.8B word} consists of the following resources:
  
 More resources are listed by [Ayman Eddakrouri](https://sites.google.com/a/aucegypt.edu/infoguistics/directory/Corpus-Linguistics/arabic-corpora) 
 
-Extraction, preprocessing and formatting commands are listed in [commands](commands.md). Due to file sizes limits in github, no files are added due to huge file sizes.
+After downloading the resources from the above links, run the [make_corpus.sh](make_corpus.sh) to automate the extraction, preprocessing,  formatting and finally generating a single-line file will the full arabic corpus. Some the the used commands are discussed in [commands](commands.md). 
+
+Due to file sizes limits in github, no files are added due to huge file sizes.
