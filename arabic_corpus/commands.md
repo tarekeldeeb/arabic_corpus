@@ -1,6 +1,8 @@
+This file elaborates on the commands used in the [make_corpus.sh](make_corpus.sh)
+
 ## General Commands
 
-To convert all old Windows-1256 encoded arabic to UTF-8:
+To convert all old [Windows-1256](https://en.wikipedia.org/wiki/Windows-1256) encoded arabic to UTF-8:
 ```sh
 find . -type f -name \*.html -exec bash -c "iconv -f Windows-1256 {} > {}.utf8" \;
 ```
@@ -10,9 +12,9 @@ After merging all corpa, the utf8 should be encoded back to Windows-1256. This i
 iconv -f utf8 -t Windows-1256
 ```
 
-To remove all line breaks:
+To replace all line breaks with spaces:
 ```sh
-sed ':a;N;$!ba;s/\n/ /g' 
+tr '\r\n' ' '
 ```
 
 To list files in a folder hierarchy, it's faster to ``find . -type f | xargs cat | sed ..`` that to ``find . -type f -exec cat {} \; | sed ..``
