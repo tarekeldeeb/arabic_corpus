@@ -19,12 +19,23 @@ To list files in a folder hierarchy, it's faster to ``find . -type f | xargs cat
 
 ### Required Pre-processing
 Do arabic preprocessing: Unify the Alef, remove short lines and long spaces, remove all non-arabic characters.
+
+#### For UTF-8 text
 ```sh
   sed "s/[$(echo -ne '\u060C\u061B\.,:')]/ /g" \
 | sed "s/[^$(echo -ne '\u0621-\u064A ')\r]//g" \
 | sed "s/  \+/ /g" \
 | sed "/^.\{,30\}$/d" \
 | sed "s/[$(echo -ne '\u0622\u0623\u0625')]/$(echo -ne '\u0627')/g"
+```
+
+#### For Cp1256 Encoding
+```sh
+tr $'\xA1\xBA.,:t' ' '
+| tr -d $'\x21-\xBF\xEE-\xFF\xDC'
+| sed "s/  \+/ /g" \
+| sed "/^.\{,30\}$/d" \
+| tr $'\xc5\xc2\xc3' $'\xc7'
 ```
 
 ## Corpus Specific Parsers
