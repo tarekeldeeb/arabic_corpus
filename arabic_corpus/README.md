@@ -23,5 +23,5 @@ After downloading the resources from the above links, run the [make_corpus.sh](m
 Due to file sizes limits in github, no files are added due to huge file sizes.
 
 ## Download Pre-built Arabic Corpus
-A zipped tar may be downloaded from my [Google Drive](https://drive.google.com/uc?export=download&id=11sy-bN658S3g6jXvJJW7C6RqwdhOkwre).
+A zipped tar may be downloaded from my [Google Drive](https://drive.google.com/uc?export=download&id=1ZkbS7l5bdRcSmfq74cynSW06TllL7mdW).
 I welcome mirroring this file.
