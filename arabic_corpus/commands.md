@@ -12,6 +12,11 @@ After merging all corpa, the utf8 should be encoded back to Windows-1256. This i
 iconv -f utf8 -t Windows-1256
 ```
 
+To check no wrongly en/decoded characters exist, it's usefull to search for "ظظ" in Windows-1256 encoding. The result should be always 0.
+```sh
+LANG=C grep -obUaP "\xD9\xD9\xD9" corpus.txt | wc -l
+```
+
 To replace all line breaks with spaces:
 ```sh
 tr '\r\n' ' '
