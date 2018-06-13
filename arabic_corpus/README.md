@@ -10,7 +10,7 @@ Using vocabulary of size 670441.
 ### Dowload Resources
 The arabic corpus {1.9B word} consists of the following resources:
  - ShamelaLibrary348.7z [link](https://www.quran.tv/ketab/ShamelaLibrary348.7z) {1.15B}
- - UN arabic corpus [link](http://lotus.kuee.kyoto-u.ac.jp/~raj/rajwindroot/corpora_downloads/UN_CORPUS/UNv1.0.6way.ar.txt) {0.37B}
+ - UN arabic corpus [mirror1](http://lotus.kuee.kyoto-u.ac.jp/~raj/rajwindroot/corpora_downloads/UN_CORPUS/UNv1.0.6way.ar.txt) [mirror2](http://corpus.leeds.ac.uk/bogdan/resources/UN-corpus/6way/UNv1.0.6way.ar.txt) {0.37B}
  - AraCorpus.tar.gz [link](http://aracorpus.e3rab.com/argistestsrv.nmsu.edu/AraCorpus.tar.gz) {0.14B}
  - Arabic Wikipedia Latest Articles Dump [link](https://dumps.wikimedia.org/arwiki/latest/arwiki-latest-pages-articles.xml.bz2) {0.11B}
  - Tashkeela-arabic-diacritized-text-utf8-0.3.zip [link](https://netix.dl.sourceforge.net/project/tashkeela/) {0.07}
