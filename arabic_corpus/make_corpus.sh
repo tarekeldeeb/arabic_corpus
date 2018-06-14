@@ -7,7 +7,7 @@
 #	 watan-2004.7z
 #	 arwiki-latest-pages-articles.xml.bz2
 #	 Tashkeela-arabic-diacritized-text-utf8-0.3.zip
-#  pos_arabic.txt and neg_arabic.txt
+#	 pos_arabic.txt and neg_arabic.txt
 #	 UNv1.0.6way.ar.txt
 
 DL_LOC="ar-download"
