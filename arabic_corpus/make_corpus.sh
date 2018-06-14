@@ -7,24 +7,22 @@
 #	 watan-2004.7z
 #	 arwiki-latest-pages-articles.xml.bz2
 #	 Tashkeela-arabic-diacritized-text-utf8-0.3.zip
-#	 UNv1.0.ar-en.tar.gz
+#  pos_arabic.txt and neg_arabic.txt
+#	 UNv1.0.6way.ar.txt
 
 DL_LOC="ar-download"
 mkdir $DL_LOC/out
 cd $DL_LOC/out
 
-function preproccp1256 { tr $'\xA1\xBA.,:t' ' ' $1 |tr -d $'\x21-\xBF\xEE-\xFF\xDC'| sed "s/  \+/ /g"| sed "/^.\{,30\}$/d"| tr $'\xc5\xc2\xc3' $'\xc7'; }
-#function preprocutf8 { sed "s/[$(echo -ne '\u060C\u061B\.,:')]/ /g" $1 | sed "s/[^$(echo -ne '\u0621-\u064A ')\r]//g" | sed "s/  \+/ /g" | sed "/^.\{,30\}$/d" | sed "s/[$(echo -ne '\u0622\u0623\u0625')]/$(echo -ne '\u0627')/g"; }
+preproccp1256 () {
+   tr $'\xA1\xBA.,:t' ' ' $1 |tr -d $'\x21-\xBF\xEE-\xFF\xDC'| sed "s/  \+/ /g"| LANG=C sed "/^.\{,30\}$/d"| tr $'\xc5\xc2\xc3' $'\xc7'; 
+}
+#preprocutf8 () { sed "s/[$(echo -ne '\u060C\u061B\.,:')]/ /g" $1 | sed "s/[^$(echo -ne '\u0621-\u064A ')\r]//g" | sed "s/  \+/ /g" | sed "/^.\{,30\}$/d" | sed "s/[$(echo -ne '\u0622\u0623\u0625')]/$(echo -ne '\u0627')/g"; }
 
 # Parse AraCorpus
 tar xzf ../AraCorpus.tar.gz
 cat AraCorpus/Data/Collection-* | preproccp1256 > aracorpus.txt
 rm -fr AraCorpus
-
-# Parse UNv1
-tar xzf ../UNv1.0.ar-en.tar.gz
-cat ar-en/UNv1.0.ar-en.ar | preproccp1256 > aracorpus.txt
-rm -fr ar-en
 
 # Parse Tashkeela
 unzip ../Tashkeela-arabic-diacritized-text-utf8-0.3.zip
@@ -39,6 +37,7 @@ rm -fr Tashkeela-arabic-diacritized-text-utf8-0.3
 # Parse ShamelaLibrary
 7z x ../ShamelaLibrary348.7z
 export MDB_JET3_CHARSET=CP1256
+export MDBICONV=CP1256
 for b in `find shamela/Books/ -name \*.mdb` ; do
   for t in `mdb-tables $b |  tr ' ' '\n' | grep -o "b[0-9]*"` ; do
     mdb-export -H $b $t | preproccp1256 >> shamela.txt;
@@ -49,7 +48,8 @@ rm -fr shamela
 # Parse Wikpedia
 ## For a faster parser, use: https://dizzylogic.com/wiki-parser [64-bit Windows App]
 wget https://raw.githubusercontent.com/attardi/wikiextractor/master/WikiExtractor.py
-bzip2 -dk ../arwiki-latest-pages-articles.xml.bz2 > arwiki.xml
+bzip2 -dk ../arwiki-latest-pages-articles.xml.bz2 
+mv ../arwiki-latest-pages-articles.xml arwiki.xml
 python WikiExtractor.py --processes 8 -b 50M -q arwiki.xml
 find text -type f | xargs cat > wiki.unproc.utf8
 iconv -c -f utf8 -t Windows-1256 wiki.unproc.utf8 | preproccp1256 > wiki.txt
@@ -62,6 +62,16 @@ cd watan
 find . -type f | xargs cat | preproccp1256 > ../watan.txt
 cd ..
 rm -fr watan
+
+# Parse UNv1
+#tar xzf ../UNv1.0.ar-en.tar.gz
+iconv -c -f utf8 -t Windows-1256 ../UNv1.0.6way.ar.txt | preproccp1256 > un.txt
+#rm -fr ar-en
+
+#Parse Arabic Tweets
+cat ../*_arabic.txt > tweets.unproc.utf8
+iconv -c -f utf8 -t Windows-1256 tweets.unproc.utf8 | preproccp1256 > tweets.txt
+rm -f tweets.unproc.utf8
 
 # Final Concat + Replace Linebreaks with a space
 cat *.txt | tr '\r\n' ' ' > ../../arabic_corpus
