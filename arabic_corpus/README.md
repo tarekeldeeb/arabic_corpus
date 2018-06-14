@@ -1,10 +1,9 @@
-This is the largest free arabic corpus online.
 ```
 BUILDING VOCABULARY
-Processed 1890071877 tokens.
-Counted 2007558 unique words.
+Processed 1754541204 tokens.
+Counted 5329509 unique words.
 Truncating vocabulary at min count 5.
-Using vocabulary of size 670441.
+Using vocabulary of size 1539115.
 ```
 ## Build the Arabic Corpus
 ### Dowload Resources
@@ -13,7 +12,8 @@ The arabic corpus {1.9B word} consists of the following resources:
  - UN arabic corpus [mirror1](http://lotus.kuee.kyoto-u.ac.jp/~raj/rajwindroot/corpora_downloads/UN_CORPUS/UNv1.0.6way.ar.txt) [mirror2](http://corpus.leeds.ac.uk/bogdan/resources/UN-corpus/6way/UNv1.0.6way.ar.txt) {0.37B}
  - AraCorpus.tar.gz [link](http://aracorpus.e3rab.com/argistestsrv.nmsu.edu/AraCorpus.tar.gz) {0.14B}
  - Arabic Wikipedia Latest Articles Dump [link](https://dumps.wikimedia.org/arwiki/latest/arwiki-latest-pages-articles.xml.bz2) {0.11B}
- - Tashkeela-arabic-diacritized-text-utf8-0.3.zip [link](https://netix.dl.sourceforge.net/project/tashkeela/) {0.07}
+ - Tashkeela-arabic-diacritized-text-utf8-0.3.zip [link](https://netix.dl.sourceforge.net/project/tashkeela/) {0.07B}
+ - Arabic Tweets [link](https://github.com/bakrianoo/Datasets) {0.03B}
  - watan-2004.7z [link](https://netix.dl.sourceforge.net/project/arabiccorpus/watan-2004corpus/watan-2004.7z) {0.01B}
  
 More resources are listed by [Ayman Eddakrouri](https://sites.google.com/a/aucegypt.edu/infoguistics/directory/Corpus-Linguistics/arabic-corpora) 
@@ -23,5 +23,5 @@ After downloading the resources from the above links, run the [make_corpus.sh](m
 Due to file sizes limits in github, no files are added due to huge file sizes.
 
 ## Download Pre-built Arabic Corpus
-A zipped tar may be downloaded from my [Google Drive](https://drive.google.com/uc?export=download&id=1ZkbS7l5bdRcSmfq74cynSW06TllL7mdW).
+A zipped tar may be downloaded from [here](https://).
 I welcome mirroring this file.
