@@ -15,7 +15,7 @@ mkdir $DL_LOC/out
 cd $DL_LOC/out
 
 preproccp1256 () {
-   tr $'\xA1\xBA.,:t' ' ' $1 |tr -d $'\x21-\xBF\xEE-\xFF\xDC'| sed "s/  \+/ /g"| LANG=C sed "/^.\{,30\}$/d"| tr $'\xc5\xc2\xc3' $'\xc7'; 
+   tr $'\xA1\xBA.,:t' ' ' $1 |tr -d $'\x00-\x1F\x21-\xBF\xEE-\xFF\xD7\xDC\xE0\xE2\xE7-\xEB'| sed "s/  \+/ /g"| LANG=C sed "/^.\{,30\}$/d"| tr $'\xc5\xc2\xc3' $'\xc7'; 
 }
 #preprocutf8 () { sed "s/[$(echo -ne '\u060C\u061B\.,:')]/ /g" $1 | sed "s/[^$(echo -ne '\u0621-\u064A ')\r]//g" | sed "s/  \+/ /g" | sed "/^.\{,30\}$/d" | sed "s/[$(echo -ne '\u0622\u0623\u0625')]/$(echo -ne '\u0627')/g"; }
 
