@@ -8,5 +8,5 @@ then
     exit
 fi
 
-wget https://archive.org/download/arabic_corpus/arabic_corpus.xz
-xz -d arabic_corpus.xz
+wget -nc https://archive.org/download/arabic_corpus/arabic_corpus.xz -P $( dirname -- "$0"; )
+xz -d $( dirname -- "$0"; )/arabic_corpus.xz
